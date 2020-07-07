@@ -1,0 +1,4 @@
+.selected-item {
+  border: 1px solid #1589ee;
+  box-shadow: inset 0 0 0 1px #1589ee;
+}

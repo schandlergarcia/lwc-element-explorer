@@ -1,0 +1,63 @@
+<template>
+  <div class="slds-grid slds-wrap">
+    <div class="slds-size_1-of-2 slds-var-p-around_medium">
+      <lightning-card title="Contact List" icon-name="standard:contact">
+        <div class="slds-var-p-around_medium">
+          <ul class="slds-has-dividers_around-space">
+            <template for:each={contactRecords} for:item="contact">
+              <li
+                class="slds-item"
+                key={contact.Id}
+                data-type="select"
+                data-id={contact.Id}
+                data-first-name={contact.FirstName}
+                data-last-name={contact.LastName}
+                data-email={contact.Email}
+                data-phone={contact.Phone}
+                onclick={handleClick}
+              >
+                <ul>
+                  <li>{contact.FirstName}</li>
+                  <li>{contact.Email}</li>
+                  <li>{contact.Phone}</li>
+                </ul>
+              </li>
+            </template>
+          </ul>
+        </div>
+      </lightning-card>
+    </div>
+    <div class="slds-size_1-of-2 slds-var-p-around_medium">
+      <lightning-card title="Selected Contacts" icon-name="standard:contact">
+        <div class="slds-var-p-around_medium">
+          <template if:true={recordsSelected}>
+            <ul class="slds-has-dividers_around-space">
+              <template for:each={selectedContactRecords} for:item="contact">
+                <li
+                  class="slds-item"
+                  key={contact.Id}
+                  data-type="contact"
+                  data-id={contact.Id}
+                  data-first-name={contact.FirstName}
+                  data-last-name={contact.LastName}
+                  data-email={contact.Email}
+                  data-phone={contact.Phone}
+                  onclick={handleClick}
+                >
+                  <ul>
+                    <li>{contact.FirstName}</li>
+                    <li>{contact.Email}</li>
+                    <li>{contact.Phone}</li>
+                  </ul>
+                </li>
+              </template>
+            </ul>
+          </template>
+          <template if:false={recordsSelected}>
+            <c-lwc-messaging-utility show-message="true" message-type="illustration" illustration-name="desert" message-title="No contacts have been selected"></c-lwc-messaging-utility>
+          </template>
+        </div>
+      </lightning-card>
+    </div>
+  </div>
+</template>
