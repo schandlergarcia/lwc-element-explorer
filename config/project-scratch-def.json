@@ -1,7 +1,9 @@
 {
-  "orgName": "stephan.garcia company",
+  "orgName": "LWC Datasets",
   "edition": "Developer",
+  "release": "Preview",
   "features": [],
+  "hasSampleData": true,
   "settings": {
     "lightningExperienceSettings": {
         "enableS1DesktopEnabled": true
