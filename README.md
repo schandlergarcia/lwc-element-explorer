@@ -37,6 +37,12 @@ The app demonstrates:
    sfdx force:source:push
    ```
 
+1. Assign the **LWC Explorer** permission set:
+
+   ```
+   sfdx force:user:permset:assign -n LWC_Explorer
+   ```
+
 1. Open the scratch org:
 
    ```
